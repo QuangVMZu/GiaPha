@@ -424,6 +424,7 @@ footer {
 }
 
 /* RESPONSIVE CHO ĐIỆN THOẠI */
+/* RESPONSIVE CHO ĐIỆN THOẠI */
 @media (max-width: 768px) {
     .header-container h1 {
         font-size: 1.9rem;
@@ -437,9 +438,29 @@ footer {
         font-size: 0.98rem;
     }
 
+    /* ĐIỀU CHỈNH MENU TRÊN MOBILE: Cho phép vuốt ngang, không rớt dòng */
     nav ul {
-        flex-direction: row; /* Thay vì cột, duy trì hàng nhưng cho phép wrap */
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap; /* Ép không rớt dòng */
+        justify-content: flex-start; /* Căn trái để vuốt */
+        overflow-x: auto; /* Bật cuộn ngang */
+        -webkit-overflow-scrolling: touch; /* Vuốt mượt trên iOS */
+        padding: 0.6rem 1rem; /* Thu gọn khoảng cách trên dưới */
+        gap: 0.4rem;
+        /* Ẩn thanh cuộn ngang (scrollbar) cho đẹp */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    /* Ẩn thanh cuộn ngang trên Chrome/Safari */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 0.8rem; /* Thu nhỏ nút bấm một chút */
+        font-size: 0.9rem;
+        white-space: nowrap; /* Ép chữ trong nút không bị bẻ thành 2 dòng */
     }
 
     .card {
